@@ -1,4 +1,4 @@
-# CPU Scheduling Simulator
+# CPT104 Courswork2: CPU Scheduling Simulator
 
 A C99 CPU scheduling simulator for CPT104 Coursework 2. It implements the four required algorithms and one bonus algorithm:
 
@@ -160,31 +160,3 @@ AVG_RESP=...
 CONTEXT_SWITCHES=...
 CPU_UTIL=...%
 ```
-
-## Final WebLinux check
-
-Before submission, run:
-
-```bash
-make clean && make
-./sched --demo
-./sched tests/workload.txt --alg FCFS
-./sched tests/workload.txt --alg SJF
-./sched tests/workload.txt --alg SRTF
-./sched tests/workload.txt --alg RR --q 2
-make clean
-```
-
-Check that compilation succeeds with minimal warnings, every run prints `RESULT: OK`, and the final `make clean` removes the generated executable.
-
-## Submission packaging
-
-The contents of this directory should be at the root of the project ZIP, not inside an additional `Code` folder. From this directory, set the actual student ID and create the ZIP as follows:
-
-```bash
-STUDENT_ID=123456789
-zip -r "../CPT104_CW2_${STUDENT_ID}.zip" . \
-  -x '.DS_Store' '*/.DS_Store' 'sched'
-```
-
-When submitting, verify that the archive contains `src/`, `Makefile`, `README.md`, and optionally `tests/` at its top level.
